@@ -119,18 +119,29 @@
 					href="#">Explore</a>
 			</div>
 
-			<div style="margin-bottom: 50vh;">
+			<div class="flow" style="margin-bottom: 50vh; --flow-space: 2rem">
 				<!-- Tabs -->
 				<div class="tab-list underline-indicators flex">
-					<button class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Moon</button>
-					<button class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Mars</button>
-					<button class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Europa</button>
+					<button aria-selected="true" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Moon</button>
+					<button aria-selected="false" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Mars</button>
+					<button aria-selected="false" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Europa</button>
 				</div>
 
 				<!-- Dots -->
-
+				<div class="dot-indicators flex">
+					<button aria-selected="true"><span class="sr-only">Slide title</span></button>
+					<button aria-selected="false"><span class="sr-only">Slide title</span></button>
+					<button aria-selected="false"><span class="sr-only">Slide title</span></button>
+				</div>
+				<p class="text-accent">Slider 1 States(Active, Hover and Idle)</p>
 
 				<!-- Numbers -->
+				<div class="number-indicators flex">
+					<button class="ff-sans-normal fs-500" aria-selected="true">1</button>
+					<button class="ff-sans-normal fs-500" aria-selected="false">2</button>
+					<button class="ff-sans-normal fs-500" aria-selected="false">3</button>
+				</div>
+				<p class="text-accent">Slider 2 States(Active, Hover and Idle)</p>
 			</div>
 		</div>
 
