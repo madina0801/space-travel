@@ -68,6 +68,9 @@ body {
 	color: hsl(var(--clr-white));
 	line-height: 1.5;
 	min-height: 100vh;
+
+	display: grid;
+	grid-template-rows: min-content 1fr;
 }
 
 /* images */
@@ -125,16 +128,21 @@ select {
 
 .grid-container {
 	display: grid;
-	column-gap: var(--container-gap, 2rem);
-	grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
 }
 
-.grid-container > *:first-child {
-	grid-column: 2;
-}
+@media(min-width: 45rem) {
+	.grid-container {
+		column-gap: var(--container-gap, 2rem);
+		grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
+	}
 
-.grid-container > *:last-child {
-	grid-column: 3;
+	.grid-container>*:first-child {
+		grid-column: 2;
+	}
+
+	.grid-container>*:last-child {
+		grid-column: 3;
+	}
 }
 
 .sr-only {
@@ -313,13 +321,14 @@ select {
 	cursor: pointer;
 }
 
-.underline-indicators :where(:not(.active)):hover, li:hover,
+.underline-indicators :where(:not(.active)):hover,
+li:hover,
 .underline-indicators>*:focus {
 	border-color: hsl(var(--clr-white) / .5);
 }
 
 .underline-indicators>.active,
-.underline-indicators > [aria-selected="true"] {
+.underline-indicators>[aria-selected="true"] {
 	border-color: hsl(var(--clr-white));
 	color: hsl(var(--clr-white));
 }
@@ -328,7 +337,7 @@ select {
 	--gap: 2rem;
 }
 
-.dot-indicators > * {
+.dot-indicators>* {
 	cursor: pointer;
 	border: 0;
 	border-radius: 50%;
@@ -337,16 +346,16 @@ select {
 	background-color: hsl(var(--clr-white)/0.25);
 }
 
-div.dot-indicators > button:where(:not([aria-selected="true"])):hover,
-div.dot-indicators > button:where(:not([aria-selected="true"])):focus {
+div.dot-indicators>button:where(:not([aria-selected="true"])):hover,
+div.dot-indicators>button:where(:not([aria-selected="true"])):focus {
 	background-color: hsl(var(--clr-white)/0.5);
 }
 
-.dot-indicators > [aria-selected="true"] {
+.dot-indicators>[aria-selected="true"] {
 	background-color: hsl(var(--clr-white));
 }
 
-.number-indicators > * {
+.number-indicators>* {
 	cursor: pointer;
 	background-color: transparent;
 	border: 0.1rem solid hsl(var(--clr-white) / 0.25);
@@ -356,12 +365,12 @@ div.dot-indicators > button:where(:not([aria-selected="true"])):focus {
 	color: hsl(var(--clr-white) / 0.25)
 }
 
-.number-indicators > [aria-selected="true"] {
+.number-indicators>[aria-selected="true"] {
 	background-color: hsl(var(--clr-white));
 	color: hsl(var(--clr-dark));
 }
 
-div.number-indicators > button:where(:not([aria-selected="true"])):hover {
-	color:hsl(var(--clr-white));
-	border-color:hsl(var(--clr-white) / .5)
+div.number-indicators>button:where(:not([aria-selected="true"])):hover {
+	color: hsl(var(--clr-white));
+	border-color: hsl(var(--clr-white) / .5)
 }
