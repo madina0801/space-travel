@@ -24,14 +24,14 @@
 	--ff-sans-normal: "Barlow", sans-serif;
 }
 
-@media(min-width: 35em){
+@media(min-width: 35em) {
 	:root {
 		--fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
 		--fs-800: 5rem;
 		--fs-700: 2.5rem;
 		--fs-600: 1.5rem;
 		--fs-400: 1rem;
-}
+	}
 }
 
 
@@ -151,12 +151,25 @@ select {
 
 .grid-container {
 	display: grid;
+	text-align: center;
+	place-items: center;
+	row-gap: 10%;
+	padding-inline: 1rem;
 }
 
-@media(min-width: 45em) {
+.grid-container * {
+	max-width: 50ch;
+}
+
+.d-block {
+	display: block;
+}
+
+@media (min-width: 45em) {
 	.grid-container {
+		text-align: left;
 		column-gap: var(--container-gap, 2rem);
-		grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
+		grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
 	}
 
 	.grid-container>*:first-child {
@@ -165,6 +178,11 @@ select {
 
 	.grid-container>*:last-child {
 		grid-column: 3;
+	}
+
+	.grid-container--home {
+		padding-bottom: max(6rem, 20vh);
+		align-items: end;
 	}
 }
 
@@ -292,6 +310,7 @@ select {
 /*    Components     */
 /* ----------------- */
 .large-button {
+	font-size: 2rem;
 	position: relative;
 	display: inline-grid;
 	z-index: 1;
