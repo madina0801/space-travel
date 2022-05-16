@@ -12,6 +12,10 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
 		rel="stylesheet">
+
+		<script src="navigation.js" defer></script>
+		<script src="tabs.js" defer></script>
+
 </head>
 
 <body class="destination">
@@ -57,7 +61,7 @@
 		</picture>
 
 
-		<div class="tab-list underline-indicators flex">
+		<div  role="tablist" class="tab-list underline-indicators flex">
 			<button aria-selected="true" class="uppercase ff-sans-cond text-accent letter-spacing-2">Moon</button>
 			<button aria-selected="false" class="uppercase ff-sans-cond text-accent letter-spacing-2">Mars</button>
 			<button aria-selected="false" class="uppercase ff-sans-cond text-accent letter-spacing-2">Europa</button>
@@ -85,7 +89,7 @@
 		</article>
 
 		<!-- Mars -->
-		<article class="destination-info flow">
+		<article hidden class="destination-info flow">
 			<h2 class="fs-800 uppercase ff-serif">Mars</h2>
 
 			<p>Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons,
@@ -105,7 +109,7 @@
 		</article>
 
 		<!-- Europa -->
-		<article class="destination-info flow">
+		<article hidden class="destination-info flow">
 			<h2 class="fs-800 uppercase ff-serif">Europa</h2>
 
 			<p>The smallest of the four Galilean moons orbiting Jupiter, Europa is a
@@ -125,7 +129,7 @@
 		</article>
 
 		<!-- Titan -->
-		<article class="destination-info flow">
+		<article hidden class="destination-info flow">
 			<h2 class="fs-800 uppercase ff-serif">Titan</h2>
 
 			<p>The only moon known to have a dense atmosphere other than Earth, Titan
@@ -145,5 +149,4 @@
 		</article>
 	</main>
 
-	<script src="app.js"></script>
 </body>
