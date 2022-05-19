@@ -729,7 +729,3 @@ body {
 		justify-self: start;
 	}
 }
-
-[role="tab"]:focus{
-	color: limegreen;
-}
