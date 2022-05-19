@@ -44,6 +44,7 @@ tabs.forEach((tab) => {
 function changeTabPanel(e) {
 	const targetTab = e.target;
 	const targetPanel = targetTab.getAttribute("aria-controls");
+	const targetImage = targetTab.getAttribute("data-image");
 
 	const tabContainer = targetTab.parentNode;
 	const mainContainer = tabContainer.parentNode;
@@ -53,5 +54,12 @@ function changeTabPanel(e) {
 		.forEach((article) => article.setAttribute("hidden", true));
 
 	mainContainer.querySelector([`#${targetPanel}`]).removeAttribute('hidden');
+
+	mainContainer
+	.querySelectorAll('img')
+	.forEach((img) => img.setAttribute("hidden", true));
+
+	mainContainer.querySelector([`#${targetImage}`]).removeAttribute('hidden');
+
 	// console.log(tabContainer);
 }
